@@ -1,5 +1,7 @@
 # island-pop
-Interactive population model for small size geographies
+Interactive population model for small-size geographies
+</br>
+ 
 Things to do:
  - Add ability to specify different survival and fertility rates for each year
- - Test against Scotland
+ - Test against published Scotland data
