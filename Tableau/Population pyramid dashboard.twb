@@ -1,0 +1,1117 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10400.17.1103.1137                               -->
+<workbook original-version='10.4' source-build='10.4.1 (10400.17.1103.1137)' source-platform='win' version='10.4' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='pop_pyramid' inline='true' name='federated.1hetydh073w5cw1f1r9490gokdbr' version='10.4'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='pop_pyramid' name='textscan.1okeaib1oszfr613t2vzw14vtb8g'>
+            <connection class='textscan' directory='C:/Users/germap01/Python/GIT PROJECTS/population-sim/workspace/Data' filename='pop_pyramid.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1okeaib1oszfr613t2vzw14vtb8g' name='pop_pyramid.csv' table='[pop_pyramid#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='integer' name='Age' ordinal='0' />
+            <column datatype='string' name='Gender' ordinal='1' />
+            <column datatype='integer' name='Pop_Count_Projection' ordinal='2' />
+            <column datatype='integer' name='SIM' ordinal='3' />
+            <column datatype='integer' name='Year' ordinal='4' />
+            <column datatype='integer' name='Pop_Count_Reference' ordinal='5' />
+            <column datatype='string' name='index_col' ordinal='6' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[pop_pyramid.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Gender]</local-name>
+            <parent-name>[pop_pyramid.csv]</parent-name>
+            <remote-alias>Gender</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pop_Count_Projection</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pop_Count_Projection]</local-name>
+            <parent-name>[pop_pyramid.csv]</parent-name>
+            <remote-alias>Pop_Count_Projection</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SIM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SIM]</local-name>
+            <parent-name>[pop_pyramid.csv]</parent-name>
+            <remote-alias>SIM</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[pop_pyramid.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pop_Count_Reference</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pop_Count_Reference]</local-name>
+            <parent-name>[pop_pyramid.csv]</parent-name>
+            <remote-alias>Pop_Count_Reference</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>index_col</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[index_col]</local-name>
+            <parent-name>[pop_pyramid.csv]</parent-name>
+            <remote-alias>index_col</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteCollation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4294967292</attribute>
+              <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[pop_pyramid.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='None' caption='Age (bin)' datatype='integer' name='[Age (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[Age]' peg='0' size='5' />
+        <aliases>
+          <alias key='%null%' value='90+' />
+        </aliases>
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal' />
+      <column caption='Projection Label' datatype='integer' name='[Calculation_530298865483223052]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF SUM([Pop_Count_Projection]) = 0 THEN NULL ELSE SUM([Pop_Count_Projection]) END' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Pop Count Projection' datatype='integer' name='[Pop_Count_Projection]' role='measure' type='quantitative' />
+      <column caption='Pop Count Reference' datatype='integer' name='[Pop_Count_Reference]' role='measure' type='quantitative' />
+      <column aggregation='Sum' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <column caption='Index Col' datatype='string' name='[index_col]' role='dimension' type='nominal' />
+      <column-instance column='[Pop_Count_Projection]' derivation='Sum' name='[sum:Pop_Count_Projection:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Pop_Count_Reference]' derivation='Sum' name='[sum:Pop_Count_Reference:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_530298865483223052]' derivation='User' name='[usr:Calculation_530298865483223052:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.455487' measure-ordering='alphabetic' measure-percentage='0.544513' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#00a2b3'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]&quot;</bucket>
+            </map>
+            <map to='#00a2b3'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk]&quot;</bucket>
+            </map>
+            <map to='#00a2b3'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865483223052:qk]&quot;</bucket>
+            </map>
+            <map to='#5c6068'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[attr:Calculation_530298865462280192:qk]&quot;</bucket>
+            </map>
+            <map to='#5c6068'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[attr:Pop_Count_Reference:qk]&quot;</bucket>
+            </map>
+            <map to='#5c6068'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865462591489:qk]&quot;</bucket>
+            </map>
+            <map to='#5c6068'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865463418883:qk]&quot;</bucket>
+            </map>
+            <map to='#767f8b'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865468104708:qk]&quot;</bucket>
+            </map>
+            <map to='#767f8b'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865469808646:qk]&quot;</bucket>
+            </map>
+            <map to='#767f8b'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470009351:qk]&quot;</bucket>
+            </map>
+            <map to='#767f8b'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470152712:qk]&quot;</bucket>
+            </map>
+            <map to='#b3b7b8'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_400538957837250562:qk]&quot;</bucket>
+            </map>
+            <map to='#b3b7b8'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865468121093:qk]&quot;</bucket>
+            </map>
+            <map to='#b3b7b8'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470177289:qk]&quot;</bucket>
+            </map>
+            <map to='#b3b7b8'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Reino Unido&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Ages'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pop_pyramid' name='federated.1hetydh073w5cw1f1r9490gokdbr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1hetydh073w5cw1f1r9490gokdbr'>
+            <column aggregation='None' caption='Age (bin)' datatype='integer' name='[Age (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='0' formula='[Age]' peg='0' size='5' />
+              <aliases>
+                <alias key='%null%' value='90+' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <sort class='manual' column='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]' direction='ASC'>
+            <dictionary>
+              <bucket>0</bucket>
+              <bucket>1</bucket>
+              <bucket>2</bucket>
+              <bucket>3</bucket>
+              <bucket>4</bucket>
+              <bucket>5</bucket>
+              <bucket>6</bucket>
+              <bucket>7</bucket>
+              <bucket>8</bucket>
+              <bucket>9</bucket>
+              <bucket>10</bucket>
+              <bucket>11</bucket>
+              <bucket>12</bucket>
+              <bucket>13</bucket>
+              <bucket>14</bucket>
+              <bucket>15</bucket>
+              <bucket>16</bucket>
+              <bucket>17</bucket>
+              <bucket>%null%</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]' value='center' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]' value='52' />
+            <format attr='band-color' scope='rows' value='#00000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]' value='center' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='band-color' scope='rows' value='#00000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='band-size' scope='rows' value='1' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]</rows>
+        <cols />
+        <pages>
+          <column>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Year:ok]</column>
+        </pages>
+        <page-trail-options enabled='true' />
+      </table>
+    </worksheet>
+    <worksheet name='Females'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pop_pyramid' name='federated.1hetydh073w5cw1f1r9490gokdbr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1hetydh073w5cw1f1r9490gokdbr'>
+            <column aggregation='None' caption='Age (bin)' datatype='integer' name='[Age (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='0' formula='[Age]' peg='0' size='5' />
+              <aliases>
+                <alias key='%null%' value='90+' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal' />
+            <column caption='Projection Label' datatype='integer' name='[Calculation_530298865483223052]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([Pop_Count_Projection]) = 0 THEN NULL ELSE SUM([Pop_Count_Projection]) END' />
+            </column>
+            <column datatype='string' name='[Gender]' role='dimension' type='nominal' />
+            <column caption='Pop Count Projection' datatype='integer' name='[Pop_Count_Projection]' role='measure' type='quantitative' />
+            <column caption='Pop Count Reference' datatype='integer' name='[Pop_Count_Reference]' role='measure' type='quantitative' />
+            <column aggregation='Sum' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Gender]' derivation='None' name='[none:Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Pop_Count_Projection]' derivation='Sum' name='[sum:Pop_Count_Projection:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pop_Count_Reference]' derivation='Sum' name='[sum:Pop_Count_Reference:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_530298865483223052]' derivation='User' name='[usr:Calculation_530298865483223052:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <sort class='manual' column='[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]&quot;</bucket>
+            </dictionary>
+          </sort>
+          <sort class='manual' column='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]' direction='ASC'>
+            <dictionary>
+              <bucket>0</bucket>
+              <bucket>1</bucket>
+              <bucket>2</bucket>
+              <bucket>3</bucket>
+              <bucket>4</bucket>
+              <bucket>5</bucket>
+              <bucket>6</bucket>
+              <bucket>7</bucket>
+              <bucket>8</bucket>
+              <bucket>9</bucket>
+              <bucket>10</bucket>
+              <bucket>11</bucket>
+              <bucket>12</bucket>
+              <bucket>13</bucket>
+              <bucket>14</bucket>
+              <bucket>15</bucket>
+              <bucket>16</bucket>
+              <bucket>17</bucket>
+              <bucket>%null%</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </sort>
+          <filter class='categorical' column='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Gender:nk]'>
+            <groupfilter function='member' level='[none:Gender:nk]' member='&quot;Female&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Gender:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' field-type='quantitative' fold='true' max='250' min='0' range-type='fixed' scope='cols' synchronized='true' type='space' />
+            <format attr='subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' scope='cols' value='true' />
+            <format attr='display' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' scope='cols' value='false' />
+            <format attr='display' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]' scope='cols' value='false' />
+            <encoding attr='space' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]' field-type='quantitative' max='250' min='0' range-type='fixed' scope='cols' type='space' />
+            <format attr='subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]' scope='cols' value='true' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]' value='' />
+            <format attr='text-format' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865483223052:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]' value='false' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='page-card-title'>
+            <format attr='title' value='Projection Year' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.813093900680542' />
+                <format attr='mark-color' value='#a0cbe8' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]' />
+              <text column='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865483223052:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='right' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='1.813093900680542' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#a0cbe8' />
+                <format attr='mark-transparency' value='78' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]' />
+              <text column='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='left' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='1.813093900680542' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#a0cbe8' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]</rows>
+        <cols>([federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk] + [federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk])</cols>
+        <pages>
+          <column>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Year:ok]</column>
+        </pages>
+        <page-trail-options enabled='true' />
+      </table>
+    </worksheet>
+    <worksheet name='Males'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='pop_pyramid' name='federated.1hetydh073w5cw1f1r9490gokdbr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1hetydh073w5cw1f1r9490gokdbr'>
+            <column aggregation='None' caption='Age (bin)' datatype='integer' name='[Age (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='0' formula='[Age]' peg='0' size='5' />
+              <aliases>
+                <alias key='%null%' value='90+' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal' />
+            <column caption='-SUM([Pop_Count_Reference])' datatype='integer' name='[Calculation_530298865470230538]' role='measure' type='quantitative' user:unnamed='Males'>
+              <calculation class='tableau' formula='-SUM([Pop_Count_Reference])' />
+            </column>
+            <column caption='-SUM([Pop_Count_Projection])' datatype='integer' name='[Calculation_530298865470255115]' role='measure' type='quantitative' user:unnamed='Males'>
+              <calculation class='tableau' formula='-SUM([Pop_Count_Projection])' />
+            </column>
+            <column caption='Projection Label' datatype='integer' name='[Calculation_530298865483223052]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='IF SUM([Pop_Count_Projection]) = 0 THEN NULL ELSE SUM([Pop_Count_Projection]) END' />
+            </column>
+            <column datatype='string' name='[Gender]' role='dimension' type='nominal' />
+            <column caption='Pop Count Projection' datatype='integer' name='[Pop_Count_Projection]' role='measure' type='quantitative' />
+            <column caption='Pop Count Reference' datatype='integer' name='[Pop_Count_Reference]' role='measure' type='quantitative' />
+            <column aggregation='Sum' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Gender]' derivation='None' name='[none:Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Pop_Count_Projection]' derivation='Sum' name='[sum:Pop_Count_Projection:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pop_Count_Reference]' derivation='Sum' name='[sum:Pop_Count_Reference:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_530298865470230538]' derivation='User' name='[usr:Calculation_530298865470230538:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_530298865470255115]' derivation='User' name='[usr:Calculation_530298865470255115:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_530298865483223052]' derivation='User' name='[usr:Calculation_530298865483223052:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <sort class='manual' column='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]' direction='ASC'>
+            <dictionary>
+              <bucket>0</bucket>
+              <bucket>1</bucket>
+              <bucket>2</bucket>
+              <bucket>3</bucket>
+              <bucket>4</bucket>
+              <bucket>5</bucket>
+              <bucket>6</bucket>
+              <bucket>7</bucket>
+              <bucket>8</bucket>
+              <bucket>9</bucket>
+              <bucket>10</bucket>
+              <bucket>11</bucket>
+              <bucket>12</bucket>
+              <bucket>13</bucket>
+              <bucket>14</bucket>
+              <bucket>15</bucket>
+              <bucket>16</bucket>
+              <bucket>17</bucket>
+              <bucket>%null%</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </sort>
+          <filter class='categorical' column='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Gender:nk]' context='true'>
+            <groupfilter function='member' level='[none:Gender:nk]' member='&quot;Male&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Gender:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk]' scope='cols' value='false' />
+            <encoding attr='space' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk]' field-type='quantitative' fold='true' max='0' min='-250' range-type='fixed' scope='cols' type='space' />
+            <format attr='display' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk]' scope='cols' value='false' />
+            <encoding attr='space' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk]' field-type='quantitative' max='0' min='-250' range-type='fixed' scope='cols' type='space' />
+            <format attr='subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk]' scope='cols' value='true' />
+            <format attr='subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk]' scope='cols' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk]' scope='cols' value='true' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865483223052:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]' value='false' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <tooltip column='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' />
+              <color column='[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Age:&#9;</run>
+                <run bold='true'>&lt;[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Year:&#9;</run>
+                <run bold='true'>&lt;[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Year:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Pop Count:&#9;</run>
+                <run bold='true'>&lt;[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.6591712236404419' />
+                <format attr='mark-color' value='#a7acad' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]' />
+              <tooltip column='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' />
+              <color column='[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Age:&#9;</run>
+                <run bold='true'>&lt;[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Year:&#9;</run>
+                <run bold='true'>&lt;[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Year:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Pop Count:&#9;</run>
+                <run bold='true'>&lt;[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='center' />
+                <format attr='text-align' value='left' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='1.6591712236404419' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#a7acad' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='6' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865483223052:qk]' />
+              <tooltip column='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' />
+              <tooltip column='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Reference:qk]' />
+              <color column='[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontalignment='2'>&lt;</run>
+                <run fontalignment='2'>[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865483223052:qk]</run>
+                <run fontalignment='2'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='vertical-align' value='center' />
+                <format attr='text-align' value='right' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='1.6591712236404419' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-color' value='#a7acad' />
+                <format attr='mark-transparency' value='78' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]</rows>
+        <cols>([federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk] + [federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk])</cols>
+        <pages>
+          <column>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Year:ok]</column>
+        </pages>
+        <show-full-range>
+          <column>[federated.1hetydh073w5cw1f1r9490gokdbr].[Age (bin)]</column>
+        </show-full-range>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Population Dashboard'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones use-insets='false'>
+        <zone h='84750' id='1' param='horz' type='layout-flow' w='96400' x='1400' y='13625'>
+          <zone h='84750' id='8' name='Males' show-title='false' w='45250' x='1400' y='13625'>
+            <layout-cache minwidth='100' type-h='fixed' type-w='scalable' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='50' h='84750' id='2' is-fixed='true' name='Ages' show-title='false' w='5800' x='46650' y='13625'>
+            <layout-cache type-h='cell' type-w='cell' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='84750' id='9' name='Females' show-title='false' w='45350' x='52450' y='13625'>
+            <layout-cache minwidth='101' type-h='fixed' type-w='scalable' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone count='2' h='13750' id='14' name='Females' name1='Ages' name2='Males' synchronized='1' type='currpage' w='16800' x='82800' y='16625'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='4' />
+          </zone-style>
+        </zone>
+        <zone h='4625' id='15' type='text' w='21300' x='1000' y='7500'>
+          <formatted-text>
+            <run bold='true' fontsize='20'>Male population</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='4625' id='16' type='text' w='24200' x='74500' y='7500'>
+          <formatted-text>
+            <run bold='true' fontcolor='#555555' fontsize='20'>Female population</run>
+          </formatted-text>
+        </zone>
+        <zone forceUpdate='true' h='9875' id='17' type='text' w='35000' x='32100' y='2250'>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#f28e2b' fontsize='20'>Population Pyramid</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run bold='true' fontalignment='1' fontcolor='#f28e2b' fontsize='20'>South Uist</run>
+          </formatted-text>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='Population Dashboard'>
+      <viewpoints>
+        <viewpoint name='Ages'>
+          <current-page>
+            <multibucket>
+              <bucket>2016</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Females'>
+          <current-page>
+            <multibucket>
+              <bucket>2016</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Males'>
+          <current-page>
+            <multibucket>
+              <bucket>2016</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+    </window>
+    <window class='worksheet' hidden='true' name='Ages'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card type='currpage' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age:nk]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Gender:nk]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Year:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='Females'>
+      <cards>
+        <edge name='left'>
+          <strip size='240'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card type='currpage' />
+            <card pane-specification-id='2' param='[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age:nk]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Gender:nk]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Year:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' hidden='true' name='Males'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card type='currpage' />
+            <card pane-specification-id='5' param='[federated.1hetydh073w5cw1f1r9490gokdbr].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>2016</bucket>
+          </multibucket>
+        </current-page>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age (bin):ok]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Age:nk]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Gender:nk]</field>
+            <field>[federated.1hetydh073w5cw1f1r9490gokdbr].[none:Year:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Population Dashboard' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nO2daXBcV3bff92v9x29oYEG0AAB7rsokaKk0TLyWPZ4xikvsR2XY0+mynYS
+      26nEqSTlqtiZylr5kOSLk3KNY48rtsfxyHFZY43GmkUzo9FGijsJkMRCrA30vq+v+/XLBxIU
+      KRLdWBrq7f2+EATvfe90s0+fe97/nntUsizLKCj0KOpWG6Cg0EoUB1DoaRQHUOhpFAdQ6GkU
+      B1DoaRQHUOhpFAdoAVJsiuryh0ip0LbmV2e/hSzVH1OZ+ptNX6+Wmr9rT2yepjwTl7JUbr31
+      sD3T32rGlZuO4gAtQHz/DwCZ6tUvI965uuX51blvI9ce/X3xG//6/s9qz4HNX+/6H1MriNSW
+      v0X5w807zoaodKjdYw/fY+bbO7/uLqBptQE9iUqPMHwatZBHDC5QKVxDSsSQSxn0L/wO5b/7
+      LYShs0jBq+g//R8pv/tfMb7y76lc+O+oxr54/zKVW39NLblGLZNG98RnqcVnKL//v9Ae/yLi
+      +T/C+Nn/ROmt/4zK4EBWuzCceJb86/8NTeAYUjKB6ZXfuX8tYeAUav0I1e9/jdKb/xLtp/4j
+      rH0TqTqENPMXqHQahD0/j5y9ilzIIdfMGJ7+CfJ/9e/Q7DmGFF5CGNiLFI9g+rHfQDz3Fxhe
+      +U3K3/kvqPr2UBOrrXinG6JEgFZQyyC+/z8R526gO/qjVFduYXj+X6Dbe5Lq/EXQ2NGd+gK6
+      w89TXb6y8XWqJajJ1KLXUPWdQO3ai/7sP0VtMty9TewS2J9A/+w/h9wtahKoXYfRn/51VNX4
+      Q5eqXPoy5XOvojv9D9Ed/RyVqW9TXZpEO/4kcimG9vS/QTtxEiolUGuQ1i4CoHYeQH/mN1EJ
+      NfRP/SoqKfnRywy+g2rks+jP/CpqXXt+1yoO0ArUNnRnfwPDp34LtcGISlWlVswjRaZR2Qag
+      VkWWqkhrN1A5hqBWRq6K1LKRhy5TXbiI7vQXUBtNIAMqCblSYX13i8o8gJyYRq7kkcsVVHX+
+      t7VP/BqG538boc+LevB55Mh3kTVeVBo1KqMPweGGUhApLaE78XOohMYfHZXRgZyYRy6nkKsN
+      kpYWIXzpS1/6UquN6EXUrnFU934WBo9SnfwrVK7TaANHqN5+DTkXQuV9Bu3IYdRWB5Xb30Pt
+      Pojg2odKq0HtHEdl1CAtXkcYPIHg3ovgHqJy4zXU/SdQCWoE3ynURoHKrW+jPfkF1EYLCEaE
+      Pv/d+7rG79ujcoyh0qx/qNXI8SsI4z+L2mL7aKzGBuIKUiKO4Dt493cqPYJz+KHr3f1Tg2bk
+      WeTiPFJ4GaF/P4J74pN4a7eEStkM136U3/8D9Gf/ccvuLy2/TXUtiO70P7jvpN2K4gAKPY2S
+      Ayj0NIoD9AhyMUYtn2o8UCoixRd336A24SEHELMx/vZvv0GucndVNDN5mfcuXn9kUiZ0h7c/
+      nNwdi4pxXv/ue4/8ulLKEU2kAbgz+SEfTt7Znfu3MXIpTPFbX6L83u9TvrwJwaoap/zh1wCo
+      hd6juvjo/2XxG//q3k8liq//LtRK1OJLj4yrTP4ZUia3E/NbzsrcJK+++iqvvvoqC2sJ4GNC
+      mJiLc/v2Ldxjhzl7JMD1m1eJJPU8c+oIkbUgmUKFsbFRKqU80eTdNyMWXqVU0zA04AWgVikR
+      SWQp5tJ4/QHMBi35TJK1aIqxsVFqYp5EtkwuncQfGEOQiqRLMm6HmVAois9SYy0SB2TCqytk
+      SzX2jI0wfeUD3pvL8qMvnsU3shcnOgDCwSWqGhP+fjeJaAiN3kwkGmNszyiCqrtSODl5G5V5
+      At0zv3Q3Oa2VKZ//MlQqCBOfRy2kkQo6tKN7KH/4BoJVpHr7TRDUaPp0SMvvUE58gHrgJbTj
+      Tz7+JqoatfQacmGN8oWvohK0aPZ/jsrUN1CFI2gP/T00vvHHz21zVuamGD50lqcPDwEgVUqP
+      LoHGDh1n+fYNyqkgBucIAkA5x+xSiHx8kf/3zbfvj12cOs/3z08xe/ldPphcAKCaCfF//vI1
+      CsU8X/mTPyWfWuMv/voNitk4f/6118iE5vnL1/6OYj7Dn/zp/yUTmuf9q9NAlTff/Gj/SLWQ
+      4k4wSmZtmte+c+4hG5enr3J1eplr732L8zeXufXh93nv2hwX3n6Tty/cYGHqPD+8NNP0N7DV
+      qH3PIdgFSm/+W8Tb7yAtvIHK8RT65/4ZlctfQS4nkQtpoEotsYJm/GXUnpPon/jZu/OHnkV/
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
