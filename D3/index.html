@@ -5,25 +5,18 @@
     svg { position: fixed; left: 50px; top: 70px}
     #myList { position: fixed; left: 50px; width: 200px; }
     #myForm { position: fixed; left: 50px; }
+    #chartTitle { font-size: 30px; font-family: 'Georgia' }
 </style>
-<body>
+<body bgcolor="CornSilk">
 
 <form id='myForm'>
-    <font size="4" color="#F88017"> Number of times to run the forecast<br></font>
+    <font size="4.5" color="DarkCyan"> Number of times to run the forecast<br></font>
 <input type="text" size="5" id="inputValue" value="1">
 <button type="button" id='inputButton'>Click to update the visualisation!</button>
 </form>
-    
 
-<!--
-Create a static dropdown menu to drive the visualisation. 
-<select id = "myList">
-<option value = "1">Measure One</option>
-<option value = "2">Measure Two</option>
-</select>
--->
 <!--Load up data visualisation scripts, including D3 library-->
 <script src="scripts/d3.v5.js"></script>
-<script src="scripts/d3_multiline.js"></script>
+<script src="scripts/d3_forecast.js"></script>
 </body>
 </html>
