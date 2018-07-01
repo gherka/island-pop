@@ -18,7 +18,7 @@
           <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
             <column datatype='integer' name='Age' ordinal='0' />
             <column datatype='string' name='Gender' ordinal='1' />
-            <column datatype='integer' name='Pop_Count_Projection' ordinal='2' />
+            <column datatype='real' name='Pop_Count_Projection' ordinal='2' />
             <column datatype='integer' name='SIM' ordinal='3' />
             <column datatype='integer' name='Year' ordinal='4' />
             <column datatype='integer' name='Pop_Count_Reference' ordinal='5' />
@@ -64,17 +64,17 @@
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>Pop_Count_Projection</remote-name>
-            <remote-type>20</remote-type>
+            <remote-type>5</remote-type>
             <local-name>[Pop_Count_Projection]</local-name>
             <parent-name>[pop_pyramid.csv]</parent-name>
             <remote-alias>Pop_Count_Projection</remote-alias>
             <ordinal>2</ordinal>
-            <local-type>integer</local-type>
+            <local-type>real</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
             <attributes>
               <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;sint64&quot;</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
             </attributes>
           </metadata-record>
           <metadata-record class='column'>
@@ -171,21 +171,26 @@
           <alias key='%null%' value='90+' />
         </aliases>
       </column>
-      <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal' />
-      <column caption='Projection Label' datatype='integer' name='[Calculation_530298865483223052]' role='measure' type='quantitative'>
+      <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal'>
+        <aliases>
+          <alias key='%null%' value='90+' />
+        </aliases>
+      </column>
+      <column caption='Projection Label' datatype='real' name='[Calculation_530298865483223052]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='IF SUM([Pop_Count_Projection]) = 0 THEN NULL ELSE SUM([Pop_Count_Projection]) END' />
       </column>
       <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
         <calculation class='tableau' formula='1' />
       </column>
-      <column caption='Pop Count Projection' datatype='integer' name='[Pop_Count_Projection]' role='measure' type='quantitative' />
+      <column caption='Pop Count Projection' datatype='real' name='[Pop_Count_Projection]' role='measure' type='quantitative' />
       <column caption='Pop Count Reference' datatype='integer' name='[Pop_Count_Reference]' role='measure' type='quantitative' />
       <column aggregation='Sum' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
       <column caption='Index Col' datatype='string' name='[index_col]' role='dimension' type='nominal' />
+      <column-instance column='[Age]' derivation='None' name='[none:Age:ok]' pivot='key' type='ordinal' />
       <column-instance column='[Pop_Count_Projection]' derivation='Sum' name='[sum:Pop_Count_Projection:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Pop_Count_Reference]' derivation='Sum' name='[sum:Pop_Count_Reference:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_530298865483223052]' derivation='User' name='[usr:Calculation_530298865483223052:qk]' pivot='key' type='quantitative' />
-      <layout dim-ordering='alphabetic' dim-percentage='0.455487' measure-ordering='alphabetic' measure-percentage='0.544513' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.501035' measure-ordering='alphabetic' measure-percentage='0.498965' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[:Measure Names]' type='palette'>
@@ -244,6 +249,103 @@
         <semantic-value key='[Country].[Name]' value='&quot;Reino Unido&quot;' />
       </semantic-values>
       <date-options start-of-week='monday' />
+      <default-sorts>
+        <sort class='manual' column='[none:Age:ok]' direction='ASC'>
+          <dictionary>
+            <bucket>0</bucket>
+            <bucket>1</bucket>
+            <bucket>2</bucket>
+            <bucket>3</bucket>
+            <bucket>4</bucket>
+            <bucket>5</bucket>
+            <bucket>6</bucket>
+            <bucket>7</bucket>
+            <bucket>8</bucket>
+            <bucket>9</bucket>
+            <bucket>10</bucket>
+            <bucket>11</bucket>
+            <bucket>12</bucket>
+            <bucket>13</bucket>
+            <bucket>14</bucket>
+            <bucket>15</bucket>
+            <bucket>16</bucket>
+            <bucket>17</bucket>
+            <bucket>18</bucket>
+            <bucket>19</bucket>
+            <bucket>20</bucket>
+            <bucket>21</bucket>
+            <bucket>22</bucket>
+            <bucket>23</bucket>
+            <bucket>24</bucket>
+            <bucket>25</bucket>
+            <bucket>26</bucket>
+            <bucket>27</bucket>
+            <bucket>28</bucket>
+            <bucket>29</bucket>
+            <bucket>30</bucket>
+            <bucket>31</bucket>
+            <bucket>32</bucket>
+            <bucket>33</bucket>
+            <bucket>34</bucket>
+            <bucket>35</bucket>
+            <bucket>36</bucket>
+            <bucket>37</bucket>
+            <bucket>38</bucket>
+            <bucket>39</bucket>
+            <bucket>40</bucket>
+            <bucket>41</bucket>
+            <bucket>42</bucket>
+            <bucket>43</bucket>
+            <bucket>44</bucket>
+            <bucket>45</bucket>
+            <bucket>46</bucket>
+            <bucket>47</bucket>
+            <bucket>48</bucket>
+            <bucket>49</bucket>
+            <bucket>50</bucket>
+            <bucket>51</bucket>
+            <bucket>52</bucket>
+            <bucket>53</bucket>
+            <bucket>54</bucket>
+            <bucket>55</bucket>
+            <bucket>56</bucket>
+            <bucket>57</bucket>
+            <bucket>58</bucket>
+            <bucket>59</bucket>
+            <bucket>60</bucket>
+            <bucket>61</bucket>
+            <bucket>62</bucket>
+            <bucket>63</bucket>
+            <bucket>64</bucket>
+            <bucket>65</bucket>
+            <bucket>66</bucket>
+            <bucket>67</bucket>
+            <bucket>68</bucket>
+            <bucket>69</bucket>
+            <bucket>70</bucket>
+            <bucket>71</bucket>
+            <bucket>72</bucket>
+            <bucket>73</bucket>
+            <bucket>74</bucket>
+            <bucket>75</bucket>
+            <bucket>76</bucket>
+            <bucket>77</bucket>
+            <bucket>78</bucket>
+            <bucket>79</bucket>
+            <bucket>80</bucket>
+            <bucket>81</bucket>
+            <bucket>82</bucket>
+            <bucket>83</bucket>
+            <bucket>84</bucket>
+            <bucket>85</bucket>
+            <bucket>86</bucket>
+            <bucket>87</bucket>
+            <bucket>88</bucket>
+            <bucket>89</bucket>
+            <bucket>%null%</bucket>
+          </dictionary>
+        </sort>
+      </default-sorts>
     </datasource>
   </datasources>
   <worksheets>
@@ -260,7 +362,11 @@
                 <alias key='%null%' value='90+' />
               </aliases>
             </column>
-            <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='%null%' value='90+' />
+              </aliases>
+            </column>
             <column aggregation='Sum' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
             <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
             <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
@@ -344,12 +450,16 @@
                 <alias key='%null%' value='90+' />
               </aliases>
             </column>
-            <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal' />
-            <column caption='Projection Label' datatype='integer' name='[Calculation_530298865483223052]' role='measure' type='quantitative'>
+            <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='%null%' value='90+' />
+              </aliases>
+            </column>
+            <column caption='Projection Label' datatype='real' name='[Calculation_530298865483223052]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='IF SUM([Pop_Count_Projection]) = 0 THEN NULL ELSE SUM([Pop_Count_Projection]) END' />
             </column>
             <column datatype='string' name='[Gender]' role='dimension' type='nominal' />
-            <column caption='Pop Count Projection' datatype='integer' name='[Pop_Count_Projection]' role='measure' type='quantitative' />
+            <column caption='Pop Count Projection' datatype='real' name='[Pop_Count_Projection]' role='measure' type='quantitative' />
             <column caption='Pop Count Reference' datatype='integer' name='[Pop_Count_Reference]' role='measure' type='quantitative' />
             <column aggregation='Sum' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
             <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
@@ -399,7 +509,7 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' field-type='quantitative' fold='true' max='250' min='0' range-type='fixed' scope='cols' synchronized='true' type='space' />
+            <encoding attr='space' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' field-type='quantitative' fold='true' max='250.0' min='0.0' range-type='fixed' scope='cols' synchronized='true' type='space' />
             <format attr='subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' scope='cols' value='' />
             <format attr='auto-subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' scope='cols' value='true' />
             <format attr='display' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[sum:Pop_Count_Projection:qk]' scope='cols' value='false' />
@@ -512,18 +622,22 @@
                 <alias key='%null%' value='90+' />
               </aliases>
             </column>
-            <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' datatype='integer' name='[Age]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='%null%' value='90+' />
+              </aliases>
+            </column>
             <column caption='-SUM([Pop_Count_Reference])' datatype='integer' name='[Calculation_530298865470230538]' role='measure' type='quantitative' user:unnamed='Males'>
               <calculation class='tableau' formula='-SUM([Pop_Count_Reference])' />
             </column>
-            <column caption='-SUM([Pop_Count_Projection])' datatype='integer' name='[Calculation_530298865470255115]' role='measure' type='quantitative' user:unnamed='Males'>
+            <column caption='-SUM([Pop_Count_Projection])' datatype='real' name='[Calculation_530298865470255115]' role='measure' type='quantitative' user:unnamed='Males'>
               <calculation class='tableau' formula='-SUM([Pop_Count_Projection])' />
             </column>
-            <column caption='Projection Label' datatype='integer' name='[Calculation_530298865483223052]' role='measure' type='quantitative'>
+            <column caption='Projection Label' datatype='real' name='[Calculation_530298865483223052]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='IF SUM([Pop_Count_Projection]) = 0 THEN NULL ELSE SUM([Pop_Count_Projection]) END' />
             </column>
             <column datatype='string' name='[Gender]' role='dimension' type='nominal' />
-            <column caption='Pop Count Projection' datatype='integer' name='[Pop_Count_Projection]' role='measure' type='quantitative' />
+            <column caption='Pop Count Projection' datatype='real' name='[Pop_Count_Projection]' role='measure' type='quantitative' />
             <column caption='Pop Count Reference' datatype='integer' name='[Pop_Count_Reference]' role='measure' type='quantitative' />
             <column aggregation='Sum' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
             <column-instance column='[Age (bin)]' derivation='None' name='[none:Age (bin):ok]' pivot='key' type='ordinal' />
@@ -570,7 +684,7 @@
         <style>
           <style-rule element='axis'>
             <format attr='display' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk]' scope='cols' value='false' />
-            <encoding attr='space' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk]' field-type='quantitative' fold='true' max='0' min='-250' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk]' field-type='quantitative' fold='true' max='0.0' min='-250.0' range-type='fixed' scope='cols' type='space' />
             <format attr='display' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470255115:qk]' scope='cols' value='false' />
             <encoding attr='space' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk]' field-type='quantitative' max='0' min='-250' range-type='fixed' scope='cols' type='space' />
             <format attr='subtitle' class='0' field='[federated.1hetydh073w5cw1f1r9490gokdbr].[usr:Calculation_530298865470230538:qk]' scope='cols' value='' />
@@ -726,6 +840,7 @@
         <show-full-range>
           <column>[federated.1hetydh073w5cw1f1r9490gokdbr].[Age (bin)]</column>
         </show-full-range>
+        <page-trail-options enabled='true' />
       </table>
     </worksheet>
   </worksheets>
