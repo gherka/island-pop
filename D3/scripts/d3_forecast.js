@@ -1,14 +1,13 @@
 //DEFINE MARGINS AND SVG CONTAINER
 
-var margin = {top: 55, right: 50, bottom: 20, left: 50};
+margin = {top: 55, right: 50, bottom: 20, left: 50};
 
-var width = 1200 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+width = 1200 - margin.left - margin.right,
+height = 300 - margin.top - margin.bottom;
 
 var svgContainer = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    //.attr("viewBox", "0.5 0.5 1200 500");
+    .attr("height", height + margin.top + margin.bottom);
 
 //CREATE A TITLE//
 
@@ -22,14 +21,54 @@ svgContainer.append("text")
 
 //HELPER FUNCTIONS AND OTHER RE-USABLE STUFF
 
-var parseTime = d3.timeParse("%d/%m/%Y");
+var parseTime = d3.timeParse("%Y");
 var t = d3.transition()
     .duration(2000)
     .ease(d3.easeLinear);
 
+
+
+function tabulate(data, columns) {
+    
+    var table = d3.select('body').append('table')
+      .attr('style', `position: fixed; left: ${margin.left+50}px; top: ${70 + margin.top + height + margin.bottom}px`)
+      
+      thead = table.append('thead')
+      tbody = table.append('tbody');
+    
+    thead.append('tr')
+      .selectAll('th')
+      .data(columns)
+      .enter()
+      .append('th')
+      .text(function(column) { return column; });
+    
+    var rows = tbody.selectAll('tr')
+      .data(data)
+      .enter()
+      .append('tr');
+    
+    var cells = rows.selectAll("td")
+      .data(function(row) {
+        return columns.map(function(column) {
+            return {column: column, value: row[column]};
+        });
+    })
+    .enter()
+    .append("td")
+    .attr("style", "font-family: Courier")
+        .html(function(d) { return d.value; });
+              
+    return table;
+    
+}
+
+
+
+
 //LOAD DATA//
 
-var f = "data/sim100_15_04.csv"
+var f = "data/pop_projection.csv"
 
 d3.csv(f).then(function(data) {
     
@@ -37,7 +76,7 @@ d3.csv(f).then(function(data) {
 
     //clean all of the data (it comes in as strings)
     data.forEach(function(d) {
-        d.Population = +d.Population;
+        d.Pop_Count = +d.Pop_Count;
         d.Year = parseTime(d.Year);
         });
         
@@ -52,7 +91,7 @@ d3.csv(f).then(function(data) {
     
     var yScale = d3.scaleLinear()
       .range([height, 0])
-      .domain([0, d3.max(data, function(d) { return d.Population; })]);
+      .domain([0, d3.max(data, function(d) { return d.Pop_Count; })]);
     
     var yAxis = d3.axisLeft()
       .scale(yScale);
@@ -66,48 +105,60 @@ d3.csv(f).then(function(data) {
       .attr('transform', `translate(${margin.left}, ${margin.top})`)
       .call(yAxis);
     
-   //Define coordinates for path using scaling defined earlier
-   var line_path = d3.line()
-      .x(function(d) {return Math.round(xScale(d.Year));})
-      .y(function(d) {return Math.round(yScale(d.Population));})
-      //.curve(d3.curveCatmullRom.alpha(0));
-    
-   //            LAST STEP: NEST THE DATA                  //
-   //split it into arrays based on Column (category) values//
-    var dataGroup = d3.nest()
-    .key(function(d) { return d.SIM; })
-    .entries(data);
-    
-    var test_arr = ['1'];
-    
-    var dg = dataGroup.filter(function(d) { return test_arr.indexOf(`${d.key}`) != -1 })
-   
-   dg.forEach(function(d,i) {
-       
-    //create(append) a new line (path) for every group in the nest
-    svgContainer.append('path')
-      .attr('d', line_path(d.values))
-      .attr("class", "line")
-      .attr('id', 'line_' + i)
-      .attr("fill", "none")
-      .attr("stroke", "black")
-      .attr("stroke-width", "2px")
-      .attr('transform', `translate(${margin.left}, ${margin.top})`)
-      .attr("shape-rendering", "geometricPrecision");
-       
-      path = d3.select('#line_'+i)
-      //length of the path will be different for each simulation
-      var totalLength = path.node().getTotalLength()
-      
-      path
-        .attr("stroke-dasharray", totalLength + " " + totalLength)
-        .attr("stroke-dashoffset", totalLength)
-        .transition(t)
-        .attr("stroke-dashoffset", 0);
-       
-      });
-    
+    //Define coordinates for path using scaling defined earlier
+    var line_path = d3.line()
+      .x(function(d) {return xScale(d.Year);})
+      .y(function(d) {return yScale(d.Pop_Count);})
 
+    
+    //                        LAST STEP: NEST THE DATA                  //
+    //split it into a hierarchical array based on variant and SIM values//  
+    
+    var nestedGroup = d3.nest()
+      .key(function(d) { return d.variant; })
+      .key(function(d) { return d.SIM; })
+      .entries(data);
+    
+    nestedGroup.forEach(function(d,i) {
+        
+        if (d.key == 'Low') { finalGroup = nestedGroup[i].values ;}
+        
+    })
+
+    var init_arr = ['1'];
+
+    var dg = finalGroup.filter(function(d) { return init_arr.indexOf(`${d.key}`) != -1 })
+    
+    console.log(dg[0]['values'][0]['Pop_Count']);
+    
+    var test_table = tabulate(finalGroup, ['Year', 'Pop_Count']);
+    
+   
+    dg.forEach(function(d,i) {
+       
+        //create(append) a new line (path) for every group in the nest
+        svgContainer.append('path')
+          .attr('d', line_path(d.values))
+          .attr("class", "line")
+          .attr('id', 'line_' + i)
+          .attr("fill", "none")
+          .attr("stroke", "black")
+          .attr("stroke-width", "1px")
+          .attr('transform', `translate(${margin.left}, ${margin.top})`)
+          .attr("shape-rendering", "geometricPrecision");
+
+        path = d3.select('#line_'+i)
+        //length of the path will be different for each simulation
+        var totalLength = path.node().getTotalLength()
+
+        path
+          .attr("stroke-dasharray", totalLength + " " + totalLength)
+          .attr("stroke-dashoffset", totalLength)
+          .transition(t)
+          .attr("stroke-dashoffset", 0);
+       
+    });
+    
     var b = document.getElementById("inputButton");
     var v = document.getElementById("inputValue")
     
@@ -130,33 +181,33 @@ d3.csv(f).then(function(data) {
         arr[arr.length] = String(randomnumber);
         }
         
-        var dg = dataGroup.filter(function(d) { return arr.indexOf(`${d.key}`) != -1 })
+        var dg = finalGroup.filter(function(d) { return arr.indexOf(`${d.key}`) != -1 })
    
         dg.forEach(function(d, i) {
        
-    //create(append) a new line (path) for every group in the nest
-    svgContainer.append('path')
-      .attr('d', line_path(d.values))
-      .attr("class", "line")
-      .attr('id', 'line_' + i)
-      .attr("fill", "none")
-      .attr("stroke", "black")
-      .attr("stroke-width", "2")
-      .attr('transform', `translate(${margin.left}, ${margin.top})`)
-      .attr("shape-rendering", "geometricPrecision")
-       
-      path = d3.select('#line_'+i)
-      //length of the path will be different for each simulation
-      var totalLength = path.node().getTotalLength()
-      
-      path
-        .attr("stroke-dasharray", totalLength + " " + totalLength)
-        .attr("stroke-dashoffset", totalLength)
-        .transition(t)
-        .attr("stroke-dashoffset", 0);
-       
-      });
+            //create(append) a new line (path) for every group (single sim) in the nest
+            svgContainer.append('path')
+              .attr('d', line_path(d.values))
+              .attr("class", "line")
+              .attr('id', 'line_' + i)
+              .attr("fill", "none")
+              .attr("stroke", "black")
+              .attr("stroke-width", "1px")
+              .attr('transform', `translate(${margin.left}, ${margin.top})`)
+              .attr("shape-rendering", "geometricPrecision")
+
+            path = d3.select('#line_'+i)
+              //length of the path will be different for each simulation
+              var totalLength = path.node().getTotalLength()
+
+            path
+              .attr("stroke-dasharray", totalLength + " " + totalLength)
+              .attr("stroke-dashoffset", totalLength)
+              .transition(t)
+              .attr("stroke-dashoffset", 0);
+
+        });
         
-        ;}, false);
+    ;}, false);
     
-    });
+});
