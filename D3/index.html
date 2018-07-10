@@ -6,6 +6,8 @@
     #myList { position: fixed; left: 50px; width: 200px; }
     #myForm { position: fixed; left: 50px; }
     #chartTitle { font-size: 30px; font-family: 'Georgia' }
+    #minmax {position: fixed; left: 20px; top: 395px; }
+    td, th { padding: 2px 9px; text-align: center; vertical-align: middle }
 </style>
 <body bgcolor="CornSilk">
 
@@ -14,6 +16,15 @@
 <input type="text" size="5" id="inputValue" value="1">
 <button type="button" id='inputButton'>Click to update the visualisation!</button>
 </form>
+    
+<table id='minmax'>
+<tr>
+<td>Minimum</td>
+</tr>
+<tr>
+<td>Maximum</td>
+</tr>
+</table>
 
 <!--Load up data visualisation scripts, including D3 library-->
 <script src="scripts/d3.v5.js"></script>

@@ -28,13 +28,16 @@ var t = d3.transition()
 
 
 
-function tabulate(data, columns) {
+function tabulate(columns, min_arr, max_arr) {
     
     var table = d3.select('body').append('table')
       .attr('style', `position: fixed; left: ${margin.left+50}px; top: ${70 + margin.top + height + margin.bottom}px`)
+      .attr('id','minmax_table')
       
       thead = table.append('thead')
       tbody = table.append('tbody');
+    
+    //APPEND THE HEADER ROW
     
     thead.append('tr')
       .selectAll('th')
@@ -43,28 +46,29 @@ function tabulate(data, columns) {
       .append('th')
       .text(function(column) { return column; });
     
-    var rows = tbody.selectAll('tr')
-      .data(data)
-      .enter()
-      .append('tr');
+    //APPEND A ROW FOR MIN AND MAX
     
-    var cells = rows.selectAll("td")
-      .data(function(row) {
-        return columns.map(function(column) {
-            return {column: column, value: row[column]};
-        });
-    })
-    .enter()
-    .append("td")
-    .attr("style", "font-family: Courier")
-        .html(function(d) { return d.value; });
+    var min_rows = tbody.append('tr');
+    var max_rows = tbody.append('tr');
+
+    //CREATE CELLS BASED ON THE MIN/MAX ARRAYS
+    
+    var min_cells = min_rows.selectAll("td")
+      .data(min_arr)
+      .enter()
+      .append("td")
+      .attr("style", "font-family: Courier")
+      .html(function(d) { return d; });
+    
+    var max_cells = max_rows.selectAll("td")
+      .data(max_arr)
+      .enter()
+      .append("td")
+      .attr("style", "font-family: Courier")
+      .html(function(d) { return d; });
               
     return table;
-    
 }
-
-
-
 
 //LOAD DATA//
 
@@ -119,21 +123,27 @@ d3.csv(f).then(function(data) {
       .key(function(d) { return d.SIM; })
       .entries(data);
     
+    //SET THE INITIAL VARIANT OF THE PROJECTION: LOW, MEDIUM OR HIGH
+    
     nestedGroup.forEach(function(d,i) {
         
         if (d.key == 'Low') { finalGroup = nestedGroup[i].values ;}
-        
-    })
+    });
 
     var init_arr = ['1'];
-
     var dg = finalGroup.filter(function(d) { return init_arr.indexOf(`${d.key}`) != -1 })
     
-    console.log(dg[0]['values'][0]['Pop_Count']);
+    //CREATE INITIAL ARRAYS TO POPULATE THE TABLE
     
-    var test_table = tabulate(finalGroup, ['Year', 'Pop_Count']);
+    var year_arr = [];
+    dg[0]['values'].forEach(function(d,i) { year_arr.push(d['Year'].getFullYear()); } );
     
-   
+    var pop_arr = [];
+    dg[0]['values'].forEach(function(d,i) { pop_arr.push(d['Pop_Count']); } );
+    
+    //GENERATE THE TABLE: MIN AND MAX ARRAYS ARE THE SAME FOR A SINGLE LINE
+    var test_table = tabulate(year_arr, pop_arr, pop_arr);
+    
     dg.forEach(function(d,i) {
        
         //create(append) a new line (path) for every group in the nest
@@ -182,8 +192,29 @@ d3.csv(f).then(function(data) {
         }
         
         var dg = finalGroup.filter(function(d) { return arr.indexOf(`${d.key}`) != -1 })
-   
+        
+        //CREATE ZERO ARRAYS 
+        
+        min_arr = new Array(year_arr.length).fill(4679);
+        max_arr = new Array(year_arr.length).fill(0);
+           
         dg.forEach(function(d, i) {
+            
+            d['values'].forEach(function(d,i) { 
+                
+                if ( d['Pop_Count'] < min_arr[i] ) {
+                    
+                    min_arr[i] = d['Pop_Count'];
+                }
+                    });
+            
+            d['values'].forEach(function(d,i) { 
+                
+                if ( d['Pop_Count'] > max_arr[i] ) {
+                    
+                    max_arr[i] = d['Pop_Count'];
+                }
+                    });
        
             //create(append) a new line (path) for every group (single sim) in the nest
             svgContainer.append('path')
@@ -205,7 +236,11 @@ d3.csv(f).then(function(data) {
               .attr("stroke-dashoffset", totalLength)
               .transition(t)
               .attr("stroke-dashoffset", 0);
+            
+            d3.select('#minmax_table').remove();
 
+            tabulate(year_arr,min_arr,max_arr);
+            
         });
         
     ;}, false);
