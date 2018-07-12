@@ -2,8 +2,8 @@
 
 margin = {top: 55, right: 50, bottom: 20, left: 50};
 
-width = 1200 - margin.left - margin.right,
-height = 300 - margin.top - margin.bottom;
+width = 800 - margin.left - margin.right,
+height = 600 - margin.top - margin.bottom;
 
 var svgContainer = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -27,11 +27,10 @@ var t = d3.transition()
     .ease(d3.easeLinear);
 
 
-
-function tabulate(columns, min_arr, max_arr) {
+function tabulate(years, min_arr, max_arr) {
     
     var table = d3.select('body').append('table')
-      .attr('style', `position: fixed; left: ${margin.left+50}px; top: ${70 + margin.top + height + margin.bottom}px`)
+      .attr('style', `position: fixed; left: ${width + margin.left + margin.right + 50}px; top: ${70 + margin.top}px`)
       .attr('id','minmax_table')
       
       thead = table.append('thead')
@@ -39,33 +38,39 @@ function tabulate(columns, min_arr, max_arr) {
     
     //APPEND THE HEADER ROW
     
+    var header = [, 'Minimum', 'Maximum'];
+    
     thead.append('tr')
       .selectAll('th')
-      .data(columns)
+      .data(header)
       .enter()
       .append('th')
       .text(function(column) { return column; });
     
-    //APPEND A ROW FOR MIN AND MAX
+    //RESTRUCTURE THE DATA TO BE TABLE-LIKE
     
-    var min_rows = tbody.append('tr');
-    var max_rows = tbody.append('tr');
+    var data_arr = [];
+    for (i = 0; i < years.length; i++) { data_arr.push([years[i], min_arr[i], max_arr[i]]); }
+    
+    //APPEND A ROW FOR EACH ARRAY IN THE ARRAY OF ARRAYS: EACH ARRAY IS NOW BOUND TO A ROW
+    
+    var rows = tbody.selectAll('tr')
+      .data(data_arr)
+      .enter()
+      .append('tr');
 
-    //CREATE CELLS BASED ON THE MIN/MAX ARRAYS
-    
-    var min_cells = min_rows.selectAll("td")
-      .data(min_arr)
+    //CREATE CELLS (REVIEW AS DON'T YET UNDERSTAND IT 100%)
+
+    var cells = rows.selectAll("td")
+      .data(function(row) {
+            return [0,1,2].map(function(column) {
+                return {column: column, value: row[[0,1,2].indexOf(column)]};
+            });
+      })
       .enter()
       .append("td")
       .attr("style", "font-family: Courier")
-      .html(function(d) { return d; });
-    
-    var max_cells = max_rows.selectAll("td")
-      .data(max_arr)
-      .enter()
-      .append("td")
-      .attr("style", "font-family: Courier")
-      .html(function(d) { return d; });
+      .html(function(d) { return d.value; });
               
     return table;
 }
