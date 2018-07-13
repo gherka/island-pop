@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
-<style>
-    svg { position: fixed; left: 50px; top: 70px}
-    #myList { position: fixed; left: 50px; width: 200px; }
-    #myForm { position: fixed; left: 50px; }
-    #chartTitle { font-size: 30px; font-family: 'Georgia' }
-    td, th { padding: 2px 9px; text-align: center; vertical-align: middle }
-    td:nth-child(1) { font-weight: bold }
-</style>
-<body bgcolor="CornSilk">
-
-<form id='myForm'>
-    <font size="4.5" color="DarkCyan"> Number of times to run the forecast<br></font>
-<input type="text" size="5" id="inputValue" value="1">
-<button type="button" id='inputButton'>Click to update the visualisation!</button>
-</form>
-
-<!--Load up data visualisation scripts, including D3 library-->
-<script src="scripts/d3.v5.js"></script>
-<script src="scripts/d3_forecast.js"></script>
+<head>
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+</head>
+<body bgcolor="Gainsboro">
+    <form id='myForm'>
+        <font size="4.5" color="DarkCyan"> Number of times to run the forecast<br></font>
+        <input type="text" size="5" id="inputValue" value="1">
+        <button type="button" id='inputButton'>Click to update the visualisation!</button>
+    </form>
+    <!--Load up data visualisation scripts, including D3 library-->
+    <script src="scripts/d3.v5.js"></script>
+    <script src="scripts/d3_forecast.js"></script>
 </body>
 </html>

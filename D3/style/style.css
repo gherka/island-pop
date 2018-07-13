@@ -1,0 +1,37 @@
+svg { position: fixed; left: 50px; top: 100px }
+
+#myForm { position: fixed; left: 50px; }
+
+#chartTitle { 
+    font-size: 30px;
+    font-family: 'Georgia';
+    position: fixed;
+    left: 400px;
+    top: 55px;
+    color: indigo;
+}
+
+#subtitle_div { display: table; text-align: center }
+
+#subtitle_text {
+    font-size: 16px;
+    font-family: 'Georgia';
+	font-style: italic;
+	position: fixed;
+	left: 300px;
+	top: 90px;
+	color: indigo;
+	width: 650px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+td, th {
+    padding: 2px 9px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td {font-family: 'Courier'; }
+
+td:nth-child(1) { font-weight: bold }

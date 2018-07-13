@@ -9,29 +9,31 @@ var svgContainer = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom);
 
-//CREATE A TITLE//
+//CREATE A TITLE & SUBTITLE//
 
-svgContainer.append("text")
+d3.select('body').append("text")
   .text("Population forecasts for South Uist")
   .attr("id",'chartTitle')
-  .attr("x", width/2)             
-  .attr("y", margin.top/2.5)
-  .attr('transform', `translate(${margin.top})`)
-  .attr("text-anchor", "middle");
+
+d3.select('body').append("div")
+  .attr('id', 'subtitle_div')
+
+d3.select('#subtitle_div').append('text')
+  .text("This projection shows the various decline paths of the South Uist population structure fixed at 2016 levels, assuming no migration or natural growth.")
+  .attr("id",'subtitle_text')
 
 //HELPER FUNCTIONS AND OTHER RE-USABLE STUFF
 
 var parseTime = d3.timeParse("%Y");
 var t = d3.transition()
-    .duration(2000)
+    .duration(1500)
     .ease(d3.easeLinear);
-
 
 function tabulate(years, min_arr, max_arr) {
     
     var table = d3.select('body').append('table')
-      .attr('style', `position: fixed; left: ${width + margin.left + margin.right + 50}px; top: ${70 + margin.top}px`)
       .attr('id','minmax_table')
+      .attr('style', `position: fixed; left: ${width + margin.left + margin.right + 50}px; top: ${95 + margin.top}px`)
       
       thead = table.append('thead')
       tbody = table.append('tbody');
@@ -69,7 +71,6 @@ function tabulate(years, min_arr, max_arr) {
       })
       .enter()
       .append("td")
-      .attr("style", "font-family: Courier")
       .html(function(d) { return d.value; });
               
     return table;
@@ -147,7 +148,7 @@ d3.csv(f).then(function(data) {
     dg[0]['values'].forEach(function(d,i) { pop_arr.push(d['Pop_Count']); } );
     
     //GENERATE THE TABLE: MIN AND MAX ARRAYS ARE THE SAME FOR A SINGLE LINE
-    var test_table = tabulate(year_arr, pop_arr, pop_arr);
+    var model_table = tabulate(year_arr, pop_arr, pop_arr);
     
     dg.forEach(function(d,i) {
        
@@ -175,7 +176,7 @@ d3.csv(f).then(function(data) {
     });
     
     var b = document.getElementById("inputButton");
-    var v = document.getElementById("inputValue")
+    var v = document.getElementById("inputValue");
     
     b.addEventListener('click', function() { 
         
@@ -184,7 +185,7 @@ d3.csv(f).then(function(data) {
         d3.selectAll('.line').remove();
         
         var t = d3.transition()
-        .duration(2000)
+        .duration(1500)
         .ease(d3.easeLinear);
         
         var sims = v.value
@@ -198,7 +199,7 @@ d3.csv(f).then(function(data) {
         
         var dg = finalGroup.filter(function(d) { return arr.indexOf(`${d.key}`) != -1 })
         
-        //CREATE ZERO ARRAYS 
+        //CREATE ZERO ARRAYS AND THEN POPULATE WITH MIN/MAX VALUES
         
         min_arr = new Array(year_arr.length).fill(4679);
         max_arr = new Array(year_arr.length).fill(0);
@@ -220,6 +221,10 @@ d3.csv(f).then(function(data) {
                     max_arr[i] = d['Pop_Count'];
                 }
                     });
+            
+            //The more lines you show, the greater opacity
+            
+            var line_alpha = 1/Math.pow(v.value, 0.45);
        
             //create(append) a new line (path) for every group (single sim) in the nest
             svgContainer.append('path')
@@ -227,6 +232,7 @@ d3.csv(f).then(function(data) {
               .attr("class", "line")
               .attr('id', 'line_' + i)
               .attr("fill", "none")
+              .attr("stroke-opacity",`${line_alpha}`)
               .attr("stroke", "black")
               .attr("stroke-width", "1px")
               .attr('transform', `translate(${margin.left}, ${margin.top})`)
