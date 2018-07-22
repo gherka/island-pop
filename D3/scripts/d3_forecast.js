@@ -190,6 +190,12 @@ d3.csv(f).then(function(data) {
         
         var sims = v.value
         
+        nestedGroup.forEach(function(d,i) {
+        
+        if (d.key == `${selected_btn}`) { finalGroup = nestedGroup[i].values ;}
+            
+        });
+        
         var arr = []
         while(arr.length < sims){
         var randomnumber = Math.floor(Math.random()*100) + 1;
