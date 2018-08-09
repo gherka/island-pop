@@ -12,14 +12,14 @@ var svgContainer = d3.select("body").append("svg")
 //CREATE A TITLE & SUBTITLE//
 
 d3.select('body').append("text")
-  .text("Population forecasts for South Uist")
+  .text("Population forecasts for North & South Uist")
   .attr("id",'chartTitle')
 
 d3.select('body').append("div")
   .attr('id', 'subtitle_div')
 
 d3.select('#subtitle_div').append('text')
-  .text("This projection shows the various decline paths of the South Uist population structure fixed at 2016 levels, assuming no migration or natural growth.")
+  .text("This projection shows the various decline paths of the Uist population structure fixed at 2016 levels, assuming no migration or natural growth.")
   .attr("id",'subtitle_text')
 
 //HELPER FUNCTIONS AND OTHER RE-USABLE STUFF
