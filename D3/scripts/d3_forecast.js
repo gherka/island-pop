@@ -12,7 +12,7 @@ var svgContainer = d3.select("body").append("svg")
 //CREATE A TITLE & SUBTITLE//
 
 d3.select('body').append("text")
-  .text("Population forecasts for North & South Uist")
+  .text("Population forecasts for Uist")
   .attr("id",'chartTitle')
 
 d3.select('body').append("div")
