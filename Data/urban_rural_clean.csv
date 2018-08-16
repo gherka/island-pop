@@ -1,0 +1,81 @@
+Classification,Year,Age_Bands,Population
+Accessible Rural,2002,0-19,138419
+Accessible Rural,2002,20-29,51666
+Accessible Rural,2002,30-44,131695
+Accessible Rural,2002,45-64,160488
+Accessible Rural,2002,65+,88132
+Accessible Rural,2014,0-19,150443
+Accessible Rural,2014,20-29,63070
+Accessible Rural,2014,30-44,120078
+Accessible Rural,2014,45-64,200345
+Accessible Rural,2014,65+,125862
+Accessible Small Towns,2002,0-19,118354
+Accessible Small Towns,2002,20-29,48257
+Accessible Small Towns,2002,30-44,109490
+Accessible Small Towns,2002,45-64,122995
+Accessible Small Towns,2002,65+,74824
+Accessible Small Towns,2014,0-19,109264
+Accessible Small Towns,2014,20-29,52336
+Accessible Small Towns,2014,30-44,86239
+Accessible Small Towns,2014,45-64,141911
+Accessible Small Towns,2014,65+,96621
+Large Urban,2002,0-19,401538
+Large Urban,2002,20-29,270937
+Large Urban,2002,30-44,405813
+Large Urban,2002,45-64,396737
+Large Urban,2002,65+,281120
+Large Urban,2014,0-19,382911
+Large Urban,2014,20-29,329389
+Large Urban,2014,30-44,384479
+Large Urban,2014,45-64,462517
+Large Urban,2014,65+,290971
+Other Urban,2002,0-19,440696
+Other Urban,2002,20-29,212284
+Other Urban,2002,30-44,411613
+Other Urban,2002,45-64,442654
+Other Urban,2002,65+,277098
+Other Urban,2014,0-19,416020
+Other Urban,2014,20-29,230897
+Other Urban,2014,30-44,348061
+Other Urban,2014,45-64,514949
+Other Urban,2014,65+,337479
+Remote Rural,2002,0-19,37311
+Remote Rural,2002,20-29,12450
+Remote Rural,2002,30-44,33966
+Remote Rural,2002,45-64,45897
+Remote Rural,2002,65+,29540
+Remote Rural,2014,0-19,36987
+Remote Rural,2014,20-29,15331
+Remote Rural,2014,30-44,27515
+Remote Rural,2014,45-64,54715
+Remote Rural,2014,65+,39314
+Remote Small Towns,2002,0-19,25415
+Remote Small Towns,2002,20-29,10179
+Remote Small Towns,2002,30-44,22214
+Remote Small Towns,2002,45-64,27522
+Remote Small Towns,2002,65+,21611
+Remote Small Towns,2014,0-19,23189
+Remote Small Towns,2014,20-29,11813
+Remote Small Towns,2014,30-44,18093
+Remote Small Towns,2014,45-64,30490
+Remote Small Towns,2014,65+,25970
+Very Remote Rural,2002,0-19,33618
+Very Remote Rural,2002,20-29,11711
+Very Remote Rural,2002,30-44,30362
+Very Remote Rural,2002,45-64,43865
+Very Remote Rural,2002,65+,28024
+Very Remote Rural,2014,0-19,30606
+Very Remote Rural,2014,20-29,12898
+Very Remote Rural,2014,30-44,23656
+Very Remote Rural,2014,45-64,49136
+Very Remote Rural,2014,65+,37550
+Very Remote Small Towns,2002,0-19,16418
+Very Remote Small Towns,2002,20-29,7061
+Very Remote Small Towns,2002,30-44,14350
+Very Remote Small Towns,2002,45-64,17174
+Very Remote Small Towns,2002,65+,12502
+Very Remote Small Towns,2014,0-19,14110
+Very Remote Small Towns,2014,20-29,8055
+Very Remote Small Towns,2014,30-44,11181
+Very Remote Small Towns,2014,45-64,18527
+Very Remote Small Towns,2014,65+,14622

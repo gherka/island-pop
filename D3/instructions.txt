@@ -1,0 +1,1 @@
+Running the batch file (you can edit it like any text file if you want to see what's inside) will open your default browser with the D3 visualisation. In the background, you'll see a Python server running from the command line. When you're finished with the visualisation, press Ctrl + C in the command line and Y to close the server.

@@ -78,7 +78,7 @@ function tabulate(years, min_arr, max_arr) {
 
 //LOAD DATA//
 
-var f = "data/pop_projection.csv"
+var f = "data/pop_projection_d3.csv"
 
 d3.csv(f).then(function(data) {
     
